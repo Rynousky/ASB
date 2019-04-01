@@ -1,49 +1,15 @@
 <template>
-  <div @click="clickHandle">
-    <i-notice-bar icon="systemprompt" loop>
-    2019年4月1日举行吃货节
-    </i-notice-bar>
-    <i-grid i-class="no-border">
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/1.png" />
-        </i-grid-icon>
-        <i-grid-label>西点</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/2.png" />
-        </i-grid-icon>
-        <i-grid-label>主食</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/3.png" />
-        </i-grid-icon>
-        <i-grid-label>外卖</i-grid-label>
-    </i-grid-item>
-</i-grid>
-    <i-grid i-class="no-border">
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/4.png" />
-        </i-grid-icon>
-        <i-grid-label>饮品</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/5.png" />
-        </i-grid-icon>
-        <i-grid-label>零食</i-grid-label>
-    </i-grid-item>
-    <i-grid-item i-class="no-border">
-        <i-grid-icon>
-            <image src="/static/grid/6.png" />
-        </i-grid-icon>
-        <i-grid-label>面食</i-grid-label>
-    </i-grid-item>
-</i-grid>
-    <i-panel title="吃货推荐">
+  <div><i-tabs :current="current_scroll" scroll @change="handleChangeScroll">
+    <i-tab key="tab1" title="选项1"></i-tab>
+    <i-tab key="tab2" title="选项2"></i-tab>
+    <i-tab key="tab3" title="选项3"></i-tab>
+    <i-tab key="tab4" title="选项4"></i-tab>
+    <i-tab key="tab5" title="选项5"></i-tab>
+    <i-tab key="tab6" title="选项6"></i-tab>
+    <i-tab key="tab7" title="选项7"></i-tab>
+    <i-tab key="tab8" title="选项8"></i-tab>
+    <i-tab key="tab9" title="选项9"></i-tab>
+</i-tabs>
       <view class="top-padding">
       <i-card title="良品铺子" extra="零食" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
         <view slot="content">好多不错的零食</view>
@@ -71,7 +37,6 @@
       </i-card>
       <view class="top-padding"></view>
     </view>
-    </i-panel>
   </div>
 </template>
 
@@ -81,6 +46,7 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      current_scroll: 'tab1',
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
@@ -101,6 +67,14 @@ export default {
       } else {
         mpvue.navigateTo({ url })
       }
+    },
+    handleChange ({ detail }) {
+        this.setData({
+            current: detail.key
+        });
+    },
+    handleChangeScroll (event) {
+        this.current_scroll = event.mp.detail.key
     },
     clickHandle (ev) {
       console.log('clickHandle:', ev)

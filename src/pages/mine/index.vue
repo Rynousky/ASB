@@ -1,5 +1,17 @@
 <template>
-  <div @click="clickHandle">
+  <div>
+    <view class="userinfo">
+    <view class="userinfo-avatar">
+    <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName"></open-data>
+    </view>
+    <i-cell-group>
+    <i-cell title="我的收藏" is-link url="/pages/logs/main"></i-cell>
+    <i-cell title="接收通知">
+        <switch slot="footer" checked />
+    </i-cell>
+</i-cell-group>
   </div>
 </template>
 
@@ -44,53 +56,24 @@ export default {
 
 <style scoped>
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+position: relative;
+width: 750rpx;
+height: 320rpx;
+color: #666;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
-
+ 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-.left{
-  float:left;
-  width:3rem;
-  height:1rem;
-  background-color:red;
-}
-
-.right{
-  float:left;
-  width:4.5rem;
-  height:1rem;
-  background-color:green;
+overflow:hidden;
+display: block;
+width: 160rpx;
+height: 160rpx;
+margin: 20rpx;
+margin-top: 50rpx;
+border-radius: 50%;
+border: 2px solid #fff;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 </style>
