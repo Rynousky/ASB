@@ -3,8 +3,8 @@
     "pages/index/main",
     "pages/logs/main",
     "pages/counter/main",
-    "pages/mine/main",
-    "pages/map/main"
+    "pages/mine/main"
+  
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,11 +23,6 @@
       "pagePath": "pages/index/main",
       "iconPath": "static/tabs/home.png",
       "selectedIconPath": "static/tabs/home-active.png"
-    }, {
-      "text": "附近",
-      "pagePath": "pages/map/main",
-      "iconPath": "static/tabs/map.png",
-      "selectedIconPath": "static/tabs/map-active.png"
     }, {
       "text": "我的",
       "pagePath": "pages/mine/main",
