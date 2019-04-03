@@ -25,9 +25,9 @@
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
       "text": "我的",
-      "pagePath": "pages/mine/main",
-      "iconPath": "static/tabs/mine.png",
-      "selectedIconPath": "static/tabs/mine-active.png"
+      "pagePath": "pages/logs/main",
+      "iconPath": "static/tabs/logs.png",
+      "selectedIconPath": "static/tabs/logs-active.png"
     }],
     "position": "bottom"
   }
